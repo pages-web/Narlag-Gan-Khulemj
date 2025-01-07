@@ -7,7 +7,7 @@ const MainBanner = async () => {
   const { articles } = await getKbArticlesByCode('Main-banner');
   if (!articles.length) return null;
   return (
-    <div className="">
+    <div>
       <Suspense>
         <LongBanners />
       </Suspense>

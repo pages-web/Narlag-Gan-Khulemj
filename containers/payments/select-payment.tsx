@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button';
 import { RadioGroup } from '@/components/ui/radio-group';
 import { Sheet, SheetClose, SheetContent } from '@/components/ui/sheet';
 import {
@@ -6,7 +7,6 @@ import {
   openMethodsAtom,
 } from '@/store/payment.store';
 import { useAtom, useAtomValue, useSetAtom } from 'jotai';
-import { Button } from '@/components/ui/button';
 import {
   CreditCardIcon,
   FileText,
@@ -67,7 +67,7 @@ const SelectPayment = () => {
           <SheetClose asChild>
             <Button
               className="absolute right-0 md:right-5 -top-1 rounded-full"
-              variant="non"
+              variant="outline"
               size="icon"
             >
               <XIcon className="h-[1.125rem] w-[1.125rem]" />
@@ -80,7 +80,7 @@ const SelectPayment = () => {
             className="container max-w-5xl px-0"
           >
             <h2 className="font-semibold md:text-xl text-black/80 mb-4">
-              {'Төлбөрийн төрлөө сонгоно уу'}
+              {('Select your payment type')}
             </h2>
             {loading ? (
               <Loading className="pt-32" />
@@ -99,11 +99,47 @@ const SelectPayment = () => {
                           <div className="grid grid-cols-2 gap-4">
                             <PaymentType
                               value="account"
-                              name="Банкны данс"
+                              name="Bank Account"
                               selected={type === 'account'}
                             >
                               <LandmarkIcon />
-                            </PaymentType>                
+                            </PaymentType>
+
+                            <PaymentType
+                              value="card"
+                              name={("Card")}
+                              selected={type === 'card'}
+                            >
+                              <CreditCardIcon />
+                            </PaymentType>
+                            {billType === '3' && (
+                              <PaymentType
+                                value="invoice"
+                                name="Invoice"
+                                selected={type === 'invoice'}
+                              >
+                              </PaymentType>
+                            )}
+                      
+                            <h5 className="col-span-2 font-medium text-lg mt-4 text-neutral-600">
+                              {('Mobile app')}
+                            </h5>
+                            {payments.map((payment) => (
+                              <PaymentType
+                                value={payment._id}
+                                name={payment.kind}
+                                selected={type === payment._id}
+                                key={payment._id}
+                              >
+                                <Image
+                                  src={`/images/payments/${payment.kind}.png`}
+                                  alt={payment.kind}
+                                  className="object-contain rounded-lg mb-0.5"
+                                  height={32}
+                                  width={32}
+                                />
+                              </PaymentType>
+                            ))}
                           </div>
                         </div>
                       </RadioGroup>
@@ -112,16 +148,14 @@ const SelectPayment = () => {
                 )}
               />
             )}
-
             <Button
               className="w-full mt-8 font-semibold"
               size="lg"
               type="submit"
               disabled={paying}
-              variant="non"
             >
               {paying && <LoadingIcon />}
-              Төлбөр
+              Pay
             </Button>
           </form>
         </Form>

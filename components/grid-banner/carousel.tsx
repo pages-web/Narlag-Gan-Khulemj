@@ -52,14 +52,14 @@ const CarouselClient = ({
       <CarouselContent containerClassname="h-full" className="h-full">
         {items.map((car) => (
           <CarouselItem
-            className="h-full relative overflow-hidden rounded-[0.5em]"
+            className="h-full relative overflow-hidden"
             key={car._id}
           >
             <Image
               src={car.image?.url}
               width={settings.width[size]}
               height={400}
-              className="absolute h-full w-full  object-cover overflow-hidden rounded-[0.5em]"
+              className="absolute h-full w-full  object-cover overflow-hidden "
             />
           </CarouselItem>
         ))}
