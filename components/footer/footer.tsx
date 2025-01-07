@@ -88,7 +88,7 @@ const Footer = async () => {
               asChild
             >
               <Link href="https://erxes.mn/" target="_blank" className='text-white'>
-                Powered by.
+                Powered by. test
                 <ErxesLogo className="ml-1 h-7 w-14 fill-white text-white" />
               </Link>
             </Button>
@@ -98,6 +98,7 @@ const Footer = async () => {
     </footer>
   );
 };
+
 
 const Col = ({
   title,
