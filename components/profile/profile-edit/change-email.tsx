@@ -67,7 +67,7 @@ const ChangeEmail = () => {
           )}
         />
 
-        <Button size="lg" disabled={loading}>
+        <Button size="lg" variant="non" disabled={loading}>
           {loading && <LoadingIcon />}
           Цахим хаяг солих
         </Button>

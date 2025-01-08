@@ -3,7 +3,7 @@ import { BanIcon, InfoIcon } from 'lucide-react';
 import { DialogFooter } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import BackButton from './back-button';
-import CheckPayment from './check-payment';
+// import CheckPayment from './check-payment';
 import Link from 'next/link';
 
 const getName = (name: string) => {
@@ -24,7 +24,7 @@ const QrDetail = ({
 }) => {
   return (
     <div className="relative">
-      <div className="max-h-[64vh] overflow-auto pb-14">
+      <div className="max-h-[52vh] overflow-auto pb-14">
         <QrContainer error={errorDescription}>
           {qrCode ? (
             <img
@@ -67,9 +67,9 @@ const QrDetail = ({
             ))}
           </div>
         )}
-        <DialogFooter className="sm:justify-center gap-2 pt-4 block md:flex space-y-2 sm:space-x-0 md:space-y-0">
+        <DialogFooter className="sm:justify-center gap-1 pt-4 block md:flex space-y-1 sm:space-x-0 md:space-y-0">
           <BackButton />
-          <CheckPayment id={id} />
+          {/* <CheckPayment id={id} /> */}
         </DialogFooter>
       </div>
     </div>

@@ -25,7 +25,7 @@ const CartProductCard = ({
 
   
   return (
-  <div className="relative flex border-neutral-200 min-w-[320px] py-4 md:px-4 last:mb-0 last:border-b-0 md:last:border-b border m-4 rounded-md md:shadow">
+  <div className="relative flex border-neutral-200 min-w-[320px] py-4 md:px-4 last:mb-0 last:border-b-0 md:last:border-b border m-4 md:shadow">
       <div className="relative overflow-hidden rounded-md w-[100px] md:w-[176px]">
         <Link href={`/product/${_id}`}>
           <Image src={productImgUrl} alt="" width={300} height={300} />

@@ -14,6 +14,7 @@ const OrderUser = () => {
         </CardTitle>
       </CardHeader>
       <Separator />
+      
       <CardContent className="flex items-center justify-between text-sm flex-wrap md:flex-nowrap gap-4 md:gap-0 py-4 md:py-6">
         <div>
           <div className="text-black/60">Овог</div>

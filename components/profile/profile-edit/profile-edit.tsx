@@ -78,7 +78,7 @@ const ProfileEdit = () => {
           )}
         />
 
-        <Button disabled={loading}>Өөрчлөлт хадгалах</Button>
+        <Button disabled={loading} variant="non">Өөрчлөлт хадгалах</Button>
       </form>
     </Form>
   );

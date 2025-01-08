@@ -95,7 +95,7 @@ const ChangePassword = () => {
           )}
         />
         <div className="border border-transparent flex items-end ">
-          <Button className="mt-auto w-full" size="lg" disabled={loading}>
+          <Button className="mt-auto w-full" size="lg" variant="non" disabled={loading}>
             {loading && <LoadingIcon />} Нууц үг солих
           </Button>
         </div>

@@ -28,7 +28,7 @@ import { usePay } from '@/sdk/hooks/payment';
 
 const FormSchema = z.object({
   type: z.string({
-    required_error: 'You need to select a payment type.',
+    required_error: 'Та төлбөрийн төрлийг сонгох хэрэгтэй.',
   }),
 });
 
@@ -80,7 +80,7 @@ const SelectPayment = () => {
             className="container max-w-5xl px-0"
           >
             <h2 className="font-semibold md:text-xl text-black/80 mb-4">
-              {('Select your payment type')}
+              Төлбөрийн төрлөө сонгоно уу
             </h2>
             {loading ? (
               <Loading className="pt-32" />
@@ -99,35 +99,30 @@ const SelectPayment = () => {
                           <div className="grid grid-cols-2 gap-4">
                             <PaymentType
                               value="account"
-                              name="Bank Account"
+                              name="Банкны данс"
                               selected={type === 'account'}
                             >
                               <LandmarkIcon />
                             </PaymentType>
 
-                            <PaymentType
-                              value="card"
-                              name={("Card")}
-                              selected={type === 'card'}
-                            >
-                              <CreditCardIcon />
-                            </PaymentType>
-                            {billType === '3' && (
+                            {/* {billType === '3' && (
                               <PaymentType
                                 value="invoice"
                                 name="Invoice"
                                 selected={type === 'invoice'}
                               >
                               </PaymentType>
-                            )}
+                            )} */}
                       
                             <h5 className="col-span-2 font-medium text-lg mt-4 text-neutral-600">
-                              {('Mobile app')}
+                              {('Цахимаар')}
                             </h5>
                             {payments.map((payment) => (
                               <PaymentType
                                 value={payment._id}
-                                name={payment.kind}
+                                // name={payment.kind}
+
+                                name="Qpay"
                                 selected={type === payment._id}
                                 key={payment._id}
                               >
@@ -152,10 +147,11 @@ const SelectPayment = () => {
               className="w-full mt-8 font-semibold"
               size="lg"
               type="submit"
+              variant="non"
               disabled={paying}
             >
               {paying && <LoadingIcon />}
-              Pay
+              Төлөх
             </Button>
           </form>
         </Form>

@@ -88,7 +88,7 @@ const ChangePhone = () => {
           )}
         />
 
-        <Button disabled={loading}>
+        <Button disabled={loading} variant="non">
           {loading && <LoadingIcon />}
           Дугаараа солих
         </Button>

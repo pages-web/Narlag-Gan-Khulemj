@@ -13,6 +13,7 @@ import { Suspense } from 'react';
 import NavTop from './nav';
 import CategoryNavContainer from '@/containers/products/category-nav';
 import Top from './Top';
+import SearchPopupShow, { SearchPopupTriggerShow } from '../search/search-popup-show';
 
 
 const DefaultLayout = ({ children }: React.PropsWithChildren) => {
@@ -37,7 +38,15 @@ const DefaultLayout = ({ children }: React.PropsWithChildren) => {
         </Suspense>
        
         <nav className="hidden md:flex md:flex-row md:flex-nowrap gap-4 relative">
-          <SearchPopupTrigger />
+          <div className='xl:block hidden'>
+            <SearchPopupTrigger />
+          </div>
+          <div className='xl:hidden'>
+            <SearchPopupTriggerShow />
+          </div>
+
+          
+
           <CartTrigger />
           <CurrentUser />
         </nav>

@@ -16,35 +16,46 @@ export interface CategoryPageContentProps extends PropsWithChildren {
   searchParams: IPageProps['searchParams'];
 }
 
-const CategoryPageContent = ({
+const HomeCategoryPageContent = ({
   title,
   sidebar,
   products,
+  totalProducts,
+  searchParams,
 }: CategoryPageContentProps) => {
   return (
-    <div className="mx-6 md:mx-12">
-    <div className="mb-20">
-      <h1 className="md:my-6 font-semibold md:text-2xl">{title}</h1>
+
+    // <div className="mx-6 md:mx-12">
+    <div className="mb-20 mx-6 md:mx-12">
+      <h1 className="md:my-6 font-bold text-2xl md:text-4xl">{title}</h1>
       <div className="md:flex gap-6">
         <CategorySidebar>{sidebar}</CategorySidebar>
         <div className="flex-1">
           <div className="flex justify-between items-center py-3 mb-2 sticky md:py-0 md:static top-0 z-50 bg-background">
+            
+            <span className="font-bold md:text-lg inline-flex items-center">
+              {totalProducts} {('бүтээгдэхүүн')} <SearchBadge />
+            </span>
+            
             <CategorySidebarTrigger />
           </div>
+
           <ProductsContainer>
             {products.map((product) => (
               <ProductCard key={product._id} {...product} />
             ))}         
           </ProductsContainer>
-
+          <ProductPagination
+            searchParams={searchParams}
+            totalProducts={totalProducts}
+          />
         </div>
       </div>
-    </div>
     </div>
   );
 };
 
-export default CategoryPageContent;
+export default HomeCategoryPageContent;
 
 
 export interface CategoryPageContentProps extends PropsWithChildren {

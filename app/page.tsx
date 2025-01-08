@@ -41,21 +41,19 @@ export default function Home(props: IPageProps) {
 
       <HomeCategory {...props} />
       
-      
       <div className="container mb-20 md:mb-14">
-      <Suspense>
-        <RecommendedProducts/>
-      </Suspense>
+      <div className="mx-6 md:mx-12">
+        <Heading title="Онцлох бүтээгдэхүүн" className="text-left mb-3 md:mb-5 "/>
+          <Suspense>
+            <RecommendedProducts/>
+          </Suspense>
+        </div>
       </div>
-
-         
       
       <div className="container mb-6 md:mb-16">
         <hr className="border-t border-gray-300 w-1/1 mx-auto" />
       </div>
-
       <KbPage/>
-
     </div>
   );
 }

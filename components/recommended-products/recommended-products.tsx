@@ -34,8 +34,7 @@ const RecommendedProducts = async ({
   if (!exceptCurrent.length) return null;
 
   return (
-    <div className="mx-6 md:mx-12">
-      <Heading title="Онцлох бүтээгдэхүүн" className="text-left mb-3 md:mb-5"/>
+    // <div className="mx-6 md:mx-12">
       <Carousel opts={{ dragFree: true }} className="group relative">
         <CarouselContent>
           {displayedProducts.map((product: IProduct) => (
@@ -55,7 +54,7 @@ const RecommendedProducts = async ({
         <CarouselPrevious className="xl:-right-122 left-1 hidden md:inline-flex group-hover:flex transition-opacity duration-300 opacity-0 group-hover:opacity-100 w-11 h-11 border-[rgb(41,91,47)]" />
         <CarouselNext className="xl:-left-244 right-1 hidden md:inline-flex group-hover:flex transition-opacity duration-300 opacity-0 group-hover:opacity-100 w-11 h-11 border-[rgb(41,91,47)]" />
       </Carousel>
-    </div>
+    // </div>
   );
 };
 

@@ -149,7 +149,7 @@ const Product = async ({ params, searchParams }: IPageProps) => {
           </section>
         </div>
         <div className="mt-28 mb-20">
-          <div className="my-4 text-lg">Танд санал болгох</div>
+          <div className="my-4 font-semibold text-2xl">Танд санал болгох</div>
           <Suspense>
             <RecommendedProducts categoryId={category?._id} productId={_id} />
           </Suspense>

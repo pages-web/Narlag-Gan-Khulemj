@@ -20,7 +20,7 @@ const CheckoutLayout = ({
         <CheckoutRoute>
           <div className="flex justify-between md:mt-8 my-6 md:mb-10 items-center">
             <h1 className="text-xl md:text-4xl font-bold">{title}</h1>
-            <Button size="lg" variant="secondary" asChild>
+            <Button size="lg" variant="non" asChild>
               <Link href={backUrl}>
                 <ArrowLeftIcon className="h-5 w-5 mr-2" />
                 {backTitle}
