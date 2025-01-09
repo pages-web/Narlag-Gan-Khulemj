@@ -26,7 +26,7 @@ const Top = async () => {
             </p>
             <div className="border-l-2 border-black h-3 mx-0 "></div>
             <Link href="/sector" className="text-xs px-1">
-              Салбарууд
+              Хаяг
             </Link>
         </div>
       </div>
