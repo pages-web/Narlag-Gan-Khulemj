@@ -24,6 +24,10 @@ const Top = async () => {
             <p  className="text-xs px-0">
               99449474
             </p>
+            <div className="border-l-2 border-black h-3 mx-0 "></div>
+            <Link href="/sector" className="text-xs px-1">
+              Салбарууд
+            </Link>
         </div>
       </div>
     </div>
