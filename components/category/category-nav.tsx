@@ -47,14 +47,14 @@ export function CategoryNav({
         >
           Нүүр
         </Link>
-        <div className="h-4 border-l-2 border-black mt-3" ></div>
+        <div className="h-4 border-l border-black mt-3" ></div>
         <Link
           className={cn(navigationMenuTriggerStyle(), "group font-semibold ml-5 hover:text-[rgb(41,91,47)]")}
           href="/about"
         >
           Бидний тухай
         </Link>
-        <div className="h-4 border-l-2 border-black mt-3" ></div>
+        <div className="h-4 border-l border-black mt-3" ></div>
         <NavigationMenuItem>
           <NavigationMenuTrigger className="font-semibold px-0 py-0">
             <Link
@@ -99,7 +99,7 @@ export function CategoryNav({
 
         </NavigationMenuItem>
 
-        <div className="h-4 border-l-2 border-black mt-3" ></div>
+        <div className="h-4 border-l border-black mt-3" ></div>
 
         <Link
           className={cn(navigationMenuTriggerStyle(), "group font-semibold ml-5 hover:text-[rgb(41,91,47)]")}
@@ -108,7 +108,7 @@ export function CategoryNav({
           Мэдээлэл
         </Link>
 
-        <div className="h-4 border-l-2 border-black mt-3" ></div>
+        <div className="h-4 border-l border-black mt-3" ></div>
 
         <Link
           className={cn(navigationMenuTriggerStyle(), "group font-semibold ml-5 hover:text-[rgb(41,91,47)]")}
@@ -117,7 +117,7 @@ export function CategoryNav({
           Үйлдвэрлэл
         </Link>
 
-        <div className="h-4 border-l-2 border-black mt-3" ></div>
+        <div className="h-4 border-l border-black mt-3" ></div>
 
         <Link
           className={cn(navigationMenuTriggerStyle(), "group font-semibold ml-5 hover:text-[rgb(41,91,47)]")}

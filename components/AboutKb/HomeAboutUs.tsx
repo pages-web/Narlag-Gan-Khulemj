@@ -11,10 +11,10 @@ import { IArticle } from '@/types/kb.types';
 import Link from 'next/link';
 import Image from '@/components/ui/image';
 
-const Production = async () => {
+const HomeAboutUs = async () => {
   let articles: IArticle[] = [];
   try {
-    const response = await getKbArticlesByCode('production-kb');
+    const response = await getKbArticlesByCode('about_us');
     articles = response?.articles || [];
   } catch (error) {
     console.error("Failed to fetch articles:", error);
@@ -24,15 +24,15 @@ const Production = async () => {
 
   return (
     <div className="md:container">
-      <Link
+        <Link
           className="text-lg leading-relaxed hover:text-[rgb(41,91,47)] md:my-6"
           dangerouslySetInnerHTML={{ __html: articles[0].title }}
-          href='production'
+          href='about'
         />
       <Carousel className="mb-4 md:mt-4 md:mb-8 no-scroll">
         <CarouselContent className="ml-0">
           {articles.map(article => (
-            <ProductionItem key={article._id} {...article} />
+            <HomeAboutUsItem key={article._id} {...article} />
           ))}
         </CarouselContent>
 
@@ -41,43 +41,39 @@ const Production = async () => {
           dangerouslySetInnerHTML={{ __html: articles[0].content }}
         /> */}
       </Carousel>
+
     </div>
     // </div>
   );
 };
 
-const ProductionItem = ({ _id, image, summary, attachments }: IArticle) => {
+const HomeAboutUsItem = ({ _id, image, summary, attachments }: IArticle) => {
   return (
-    
     <CarouselItem className="flex-basis-[1] pl-0" key={_id}>
-       <Link
+      <Link
         className="relative aspect-[4/5] md:aspect-[13/5] overflow-hidden block"
         href='about'
       >
-      <div
-        className="relative aspect-[4/5] md:aspect-[13/5] overflow-hidden block"
-      >
         <Image
           src={image?.url}
-          alt={summary || "image"}
+          alt=""
           width={1536}
           height={600}
           className="absolute object-cover inset-0 object-center hidden md:block"
           skipAnimation
         />
         <Image
-              src={(attachments || [])[0]?.url || ''}
-              alt=""
-              width={1536}
-              height={600}
-              skipAnimation
-              className="absolute object-cover inset-0 object-center md:hidden"
-            />
-      </div>
+          src={(attachments || [])[0]?.url || ''}
+          alt=""
+          width={1536}
+          height={600}
+          skipAnimation
+          className="absolute object-cover inset-0 object-center md:hidden"
+        />
       </Link>
     </CarouselItem>
   );
 };
 
-export default Production;
+export default HomeAboutUs;
 

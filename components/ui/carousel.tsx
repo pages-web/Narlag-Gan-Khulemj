@@ -175,6 +175,32 @@ const CarouselContent = React.forwardRef<
 });
 CarouselContent.displayName = 'CarouselContent';
 
+
+const CarouselContentNew = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement> & { containerClassname?: string }
+>(({ className, containerClassname, ...props }, ref) => {
+  const { carouselRef, orientation } = useCarousel();
+
+  return (
+    <div
+      ref={carouselRef}
+      className={cn('overflow-hidden', containerClassname)}
+    >
+      <div
+        ref={ref}
+        className={cn(
+          'flex',
+          // orientation === 'horizontal' ? '-ml-4' : '-mt-4 flex-col',
+          className
+        )}
+        {...props}
+      />
+    </div>
+  );
+});
+CarouselContentNew.displayName = 'CarouselContentNew';
+
 const CarouselItem = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
@@ -257,7 +283,6 @@ const CarouselNext = React.forwardRef<
     </Button>
   );
 });
-
 CarouselNext.displayName = 'CarouselNext';
 
 export {

@@ -11,7 +11,7 @@ import { IArticle } from '@/types/kb.types';
 import Link from 'next/link';
 import Image from '@/components/ui/image';
 
-const Production = async () => {
+const HomeProduction = async () => {
   let articles: IArticle[] = [];
   try {
     const response = await getKbArticlesByCode('production-kb');
@@ -32,27 +32,20 @@ const Production = async () => {
       <Carousel className="mb-4 md:mt-4 md:mb-8 no-scroll">
         <CarouselContent className="ml-0">
           {articles.map(article => (
-            <ProductionItem key={article._id} {...article} />
+            <HomeProductionItem key={article._id} {...article} />
           ))}
         </CarouselContent>
-
-        {/* <div
-          className="text-lg leading-relaxed text-gray-800 md:my-6"
-          dangerouslySetInnerHTML={{ __html: articles[0].content }}
-        /> */}
       </Carousel>
     </div>
-    // </div>
   );
 };
 
-const ProductionItem = ({ _id, image, summary, attachments }: IArticle) => {
+const HomeProductionItem = ({ _id, image, summary, attachments }: IArticle) => {
   return (
-    
     <CarouselItem className="flex-basis-[1] pl-0" key={_id}>
        <Link
         className="relative aspect-[4/5] md:aspect-[13/5] overflow-hidden block"
-        href='about'
+        href='production'
       >
       <div
         className="relative aspect-[4/5] md:aspect-[13/5] overflow-hidden block"
@@ -79,5 +72,5 @@ const ProductionItem = ({ _id, image, summary, attachments }: IArticle) => {
   );
 };
 
-export default Production;
+export default HomeProduction;
 

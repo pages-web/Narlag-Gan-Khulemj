@@ -30,10 +30,15 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function Home(props: IPageProps) {
   return (
     <div className="min-h-screen">
+      
       <Suspense>
        <MainBanner />
       </Suspense>
       <ScreenBanner />
+      <div className="container mb-20 md:mb-14">
+         <KbPage/>
+      </div>
+      
       <CategoryCard />
 
       <Display />
@@ -53,7 +58,6 @@ export default function Home(props: IPageProps) {
       <div className="container mb-6 md:mb-16">
         <hr className="border-t border-gray-300 w-1/1 mx-auto" />
       </div>
-      <KbPage/>
     </div>
   );
 }
