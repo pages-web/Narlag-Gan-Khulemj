@@ -9,16 +9,13 @@ import {
   SheetTrigger,
 } from '../ui/sheet';
 import Links from './Links';
-
-import Link from 'next/link';
-
 import Footer from '../footer/footer';
 
 const MenuTrigger = ({ domain }: { domain: string }) => {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="ghost" size="icon" className="md:hidden">
+        <Button variant="ghost" size="icon" className="lg:hidden">
           <MenuIcon />
         </Button>
       </SheetTrigger>

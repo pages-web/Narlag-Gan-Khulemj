@@ -1,14 +1,20 @@
 'use client';
-import { hexToHsl } from '@/lib/utils';
 import { configAtom } from '@/store/auth.store';
 import { IConfig } from '@/types/auth.types';
+import { IProduct } from '@/types/product.types';
 import { useSetAtom } from 'jotai';
 import { useLayoutEffect } from 'react';
 
 const ConfigProvider = ({
   children,
   config,
-}: React.PropsWithChildren & { config: IConfig }) => {
+  deliveryProducts,
+  speacialProductIds,
+}: React.PropsWithChildren & {
+  config: IConfig;
+  deliveryProducts?: IProduct[];
+  speacialProductIds: string[];
+}) => {
   const setConfig = useSetAtom(configAtom);
   const { deliveryConfig, erxesAppToken, paymentIds, name, isCheckRemainder } =
     config || {};
@@ -20,6 +26,8 @@ const ConfigProvider = ({
       paymentIds,
       name,
       isCheckRemainder,
+      deliveryProducts,
+      speacialProductIds,
     });
   }, []);
 

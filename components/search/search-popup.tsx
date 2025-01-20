@@ -69,7 +69,7 @@ const SearchPopup = () => {
     <Popover open={open} onOpenChange={setOpen} modal>
       <PopoverTrigger asChild className="bg-black">
         <div
-          className={cn("fixed", isScrolled ? "top-[68px]" : "top-[120px]")}
+          className={cn("fixed", isScrolled ? "top-[68px]" : "top-[100px]")}
         />
       </PopoverTrigger>
         <PopoverContent
