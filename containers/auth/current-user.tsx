@@ -5,7 +5,8 @@ import { useCurrentUser } from '@/sdk/queries/auth.client';
 import { Loader2Icon } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect } from 'react';
-
+// import { UserIcon } from '@/sdk/queries/auth.client';
+import { UserIcon } from 'lucide-react';
 const CurrentUser = () => {
   const { currentUser, setLoading, loading } = useCurrentUser();
 
@@ -44,8 +45,11 @@ const CurrentUser = () => {
       asChild
       className="relative shadow-none hover:bg-background/10 text-inherit hover:text-inherit"
     >
-      <Link href="/login" className='border-2 border-[rgb(41,91,47)] rounded-lg'>
+      {/* <Link href="/login" className='border-2 border-[rgb(41,91,47)] rounded-lg'>
         Нэвтрэх
+      </Link> */}
+      <Link href="/login">
+        <UserIcon className="h-5 w-5" />
       </Link>
     </Button>
   );

@@ -7,6 +7,7 @@ const Top = async () => {
   const { branchDetail} = await getBranchDetail();
   const { phoneNumber} = branchDetail || {};
   return (
+    //xl:block hidden
     <div className=" text-black lg:flex xl:block hidden text-[rgb(41,91,47)]">
       <div className="flex justify-between items-center w-full lg:h-[40px] lg:sticky container px-8 py-5">
         <Link href="/" className="text-xs font-bold">

@@ -15,7 +15,7 @@ export async function NavbarTop({
   const { logo } = config?.uiOptions || {};
   return (
     <header
-      className="h-14 lg:h-[80px] z-30 lg:sticky lg:-top-1 md:fixed top-0 left-0 w-full flex right-0 z-50 items-center h-[34px] md:h-[50px] bg-white text-black"
+      className="h-14 lg:h-[80px] z-30 lg:sticky lg:-top-1 md:fixed top-0 left-0 w-full flex right-0 z-50 items-center h-[34px] md:h-[120px] bg-white text-black"
       {...rest}
     >
       <div className="flex gap-[clamp(1rem,2vw,2rem)] justify-between items-center w-full lg:h-[60px] lg:sticky top-0 container pt-1 lg:pt-0">
