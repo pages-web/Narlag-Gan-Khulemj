@@ -8,6 +8,7 @@ const Mobile = dynamic(() => import('./category-sidebar-mobile'), {
   loading: () => <div className="md:w-[303px]"></div>
 });
 
+
 const CategorySidebar = ({ children }: React.PropsWithChildren) => {
   const isDesktop = useMediaQuery('(min-width: 768px)');
 

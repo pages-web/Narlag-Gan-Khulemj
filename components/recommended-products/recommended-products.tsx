@@ -10,7 +10,6 @@ import {
 import { IProduct } from '@/types/product.types';
 import { cn } from '@/lib/utils';
 import { Heading } from '../heading/heading';
-import Production from "@/app/production/page";
 
 
 const RecommendedProducts = async ({

@@ -6,18 +6,18 @@ import Image from '@/components/ui/image';
 const Production = async () => {
   let articles: IArticle[] = [];
   try {
-    const response = await getKbArticlesByCode('production-kb');
+    const response = await getKbArticlesByCode('news-kb');
     articles = response?.articles || [];
   } catch (error) {
     console.error('Failed to fetch articles:', error);
   }
 
-  if (!articles.length) return <div className="mt-6 md:mt-12" />;
+  if (!articles.length) return <div className="mt-6 md:mt-12"/>;
 
   return (
     <div className="container flex ">
       <main className="flex-1 my-5">
-        <h1 className='font-semibold text-2xl' >Үйлдвэрлэл</h1>
+        <h1 className='font-semibold text-2xl' >Мэдээлэл</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
           {articles.map((article) => (
             <ProductionItem key={article._id} {...article} />
@@ -40,7 +40,7 @@ const ProductionItem = ({ _id, image, summary, title, content}: IArticle) => {
           alt={summary || 'Image'}
           width={1920}
           height={1080}
-          className="rounded object-cover"
+          className="object-cover"
         />
       <div
           className="leading-relaxed hover:text-[rgb(41,91,47)]"

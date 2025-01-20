@@ -55,9 +55,9 @@ export default function Home(props: IPageProps) {
         </div>
       </div>
       
-      <div className="container mb-6 md:mb-16">
+      {/* <div className="container mb-6 md:mb-16">
         <hr className="border-t border-gray-300 w-1/1 mx-auto" />
-      </div>
+      </div> */}
     </div>
   );
 }

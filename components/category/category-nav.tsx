@@ -103,7 +103,7 @@ export function CategoryNav({
 
         <Link
           className={cn(navigationMenuTriggerStyle(), "group font-semibold ml-5 hover:text-[rgb(41,91,47)]")}
-          href="/a"
+          href="/news"
         >
           Мэдээлэл
         </Link>

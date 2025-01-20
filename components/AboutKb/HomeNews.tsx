@@ -11,10 +11,10 @@ import { IArticle } from '@/types/kb.types';
 import Link from 'next/link';
 import Image from '@/components/ui/image';
 
-const HomeProduction = async () => {
+const HomeNews = async () => {
   let articles: IArticle[] = [];
   try {
-    const response = await getKbArticlesByCode('production-kb');
+    const response = await getKbArticlesByCode('news-kb');
     articles = response?.articles || [];
   } catch (error) {
     console.error("Failed to fetch articles:", error);
@@ -27,12 +27,12 @@ const HomeProduction = async () => {
       <Link
           className="text-lg leading-relaxed hover:text-[rgb(41,91,47)] md:my-6"
           dangerouslySetInnerHTML={{ __html: articles[0].title }}
-          href='production'
+          href='news'
         />
       <Carousel className="mb-4 md:mt-4 md:mb-8 no-scroll">
         <CarouselContent className="ml-0">
           {articles.map(article => (
-            <HomeProductionItem key={article._id} {...article} />
+            <HomeNewsItem key={article._id} {...article} />
           ))}
         </CarouselContent>
       </Carousel>
@@ -40,12 +40,12 @@ const HomeProduction = async () => {
   );
 };
 
-const HomeProductionItem = ({ _id, image, summary, attachments }: IArticle) => {
+const HomeNewsItem = ({ _id, image, summary, attachments }: IArticle) => {
   return (
     <CarouselItem className="flex-basis-[1] pl-0" key={_id}>
        <Link
         className="relative aspect-[4/5] md:aspect-[13/5] overflow-hidden block"
-        href='production'
+        href='news'
       >
       <div
         className="relative aspect-[4/5] md:aspect-[13/5] overflow-hidden block"
@@ -72,5 +72,5 @@ const HomeProductionItem = ({ _id, image, summary, attachments }: IArticle) => {
   );
 };
 
-export default HomeProduction;
+export default HomeNews;
 

@@ -11,10 +11,10 @@ import { IArticle } from '@/types/kb.types';
 import Link from 'next/link';
 import Image from '@/components/ui/image';
 
-const HomeAboutUs = async () => {
+const HomeProject = async () => {
   let articles: IArticle[] = [];
   try {
-    const response = await getKbArticlesByCode('about_us');
+    const response = await getKbArticlesByCode('project-kb');
     articles = response?.articles || [];
   } catch (error) {
     console.error("Failed to fetch articles:", error);
@@ -24,49 +24,53 @@ const HomeAboutUs = async () => {
 
   return (
     <div className="md:container">
-        <Link
+      <Link
           className="text-lg leading-relaxed hover:text-[rgb(41,91,47)] md:my-6"
           dangerouslySetInnerHTML={{ __html: articles[0].title }}
-          href='about'
+          href='news'
         />
       <Carousel className="mb-4 md:mt-4 md:mb-8 no-scroll">
-        <div className="ml-0">
+        <CarouselContent className="ml-0">
           {articles.map(article => (
-            <HomeAboutUsItem key={article._id} {...article} />
+            <HomeProjectItem key={article._id} {...article} />
           ))}
-        </div>
+        </CarouselContent>
       </Carousel>
     </div>
   );
 };
 
-const HomeAboutUsItem = ({ _id, image, summary, attachments }: IArticle) => {
+const HomeProjectItem = ({ _id, image, summary, attachments }: IArticle) => {
   return (
     <CarouselItem className="flex-basis-[1] pl-0" key={_id}>
-      <Link
+       <Link
         className="relative aspect-[4/5] md:aspect-[13/5] overflow-hidden block"
-        href='about'
+        href='project'
+      >
+      <div
+        className="relative aspect-[4/5] md:aspect-[13/5] overflow-hidden block"
       >
         <Image
           src={image?.url}
-          alt=""
+          alt={summary || "image"}
           width={1536}
           height={600}
           className="absolute object-cover inset-0 object-center hidden md:block"
           skipAnimation
         />
         <Image
-          src={(attachments || [])[0]?.url || ''}
-          alt=""
-          width={1536}
-          height={600}
-          skipAnimation
-          className="absolute object-cover inset-0 object-center md:hidden"
-        />
+              src={(attachments || [])[0]?.url || ''}
+              alt=""
+              width={1536}
+              height={600}
+              skipAnimation
+              className="absolute object-cover inset-0 object-center md:hidden"
+            />
+      </div>
       </Link>
     </CarouselItem>
   );
 };
 
-export default HomeAboutUs;
+export default HomeProject;
 

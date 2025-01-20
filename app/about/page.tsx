@@ -23,23 +23,28 @@ const AboutUs = async () => {
   if (!articles.length) return <div className="mt-6 md:mt-12" />;
 
   return (
-    <div className="md:container">
-      <Link
-        className="text-lg leading-relaxed hover:text-[rgb(41,91,47)] md:my-6"
-        dangerouslySetInnerHTML={{ __html: articles[0].title }}
-        href='about'
-      />
-      <Carousel className="mb-4 md:mt-4 md:mb-8 no-scroll">
-        <CarouselContent className="ml-0">
-          {articles.map(article => (
-            <AboutUsItem key={article._id} {...article} />
-          ))}
-        </CarouselContent>
-        <div
-          className="text-lg leading-relaxed text-gray-800 md:my-6"
-          dangerouslySetInnerHTML={{ __html: articles[0].content }}
-        />
-      </Carousel>
+    <div className="md:container mt-7">
+      <div className="flex flex-col lg:flex-row gap-8 items-center">
+        <div className="flex-1 relative aspect-[4/3] md:aspect-[3/2] lg:aspect-[3/1.5] overflow-hidden shadow-md">
+          <Image
+            src={articles[0]?.image?.url || ''}
+            alt="About Us"
+            width={800}
+            height={600}
+            className="absolute object-cover inset-0"
+            skipAnimation
+          />
+        </div>
+        <div className="flex-1 text-gray-800">
+          <h2 className="text-3xl font-semibold text-green-800 mb-4">
+            {articles[0]?.title || 'About Us'}
+          </h2>
+          <div
+            className="text-lg leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: articles[0]?.content || '' }}
+          />
+        </div>
+      </div>
     </div>
   );
 };
@@ -49,7 +54,7 @@ const AboutUsItem = ({ _id, image, summary, attachments }: IArticle) => {
     <CarouselItem className="flex-basis-[1] pl-0" key={_id}>
       <Link
         className="relative aspect-[4/5] md:aspect-[13/5] overflow-hidden block"
-        href='about'
+        href="about"
       >
         <Image
           src={image?.url}
@@ -73,4 +78,3 @@ const AboutUsItem = ({ _id, image, summary, attachments }: IArticle) => {
 };
 
 export default AboutUs;
-
