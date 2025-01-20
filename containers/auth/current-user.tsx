@@ -45,12 +45,12 @@ const CurrentUser = () => {
       asChild
       className="relative shadow-none hover:bg-background/10 text-inherit hover:text-inherit"
     >
-      {/* <Link href="/login" className='border-2 border-[rgb(41,91,47)] rounded-lg'>
+      <Link href="/login" className='border-2 border-[rgb(41,91,47)] rounded-lg'>
         Нэвтрэх
-      </Link> */}
-      <Link href="/login">
-        <UserIcon className="h-5 w-5" />
       </Link>
+      {/* <Link href="/login">
+        <UserIcon className="h-5 w-5" />
+      </Link> */}
     </Button>
   );
 };
