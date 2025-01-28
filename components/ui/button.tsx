@@ -24,6 +24,7 @@ const buttonVariants = cva(
         custom:' bg-[rgb(41,91,47)] text-white hover:bg-white border border-[rgb(41,91,47)] hover:text-[rgb(41,91,47)]',
         non:' bg-[rgb(41,91,47)] text-white',
         none_color:'text-white',
+        phone: "bg-[rgb(41,91,47)] text-white",
       
       },
       size: {
@@ -35,7 +36,7 @@ const buttonVariants = cva(
       },
     },
     defaultVariants: {
-      variant: "default",
+      variant: "phone",
       size: "default",
     },
   }

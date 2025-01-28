@@ -65,7 +65,7 @@ const BottomNav = () => {
               path={pathname}
               onClick={() => openCart(true)}
               key={label}
-              className="bg-primary hover:bg-primary"
+              className="bg-[rgb(41,91,47)] text-white"
             >
               <Badge
                 variant="outline"
@@ -108,8 +108,8 @@ export const BottomNavItem = memo(
     return (
       <Button
         className={cn(
-          'flex-col h-auto w-full gap-1 rounded-none px-0 pb-1.5 pt-3 relative hover:bg-active',
-          path === pathname && 'bg-active',
+          'flex-col h-auto w-full gap-1 rounded-none px-0 pb-1.5 pt-3 relative',
+          path === pathname && 'bg-white text-[rgb(41,91,47)]',
           className
         )}
         key={label}
