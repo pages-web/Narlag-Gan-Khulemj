@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-// import FacebookLogin from '@/containers/auth/facebook-login';
+import FacebookLogin from '@/containers/auth/facebook-login';
 import GoogleLogin from '@/containers/auth/google-login';
 import LoginForm from '@/containers/auth/login-form';
 import { Metadata } from 'next/types';
@@ -37,6 +37,7 @@ const Login = () => {
           <div className="space-y-3">
             {process.env.NEXT_PUBLIC_FACEBOOK_ID && (
               <Suspense>
+                <FacebookLogin />
               </Suspense>
             )}
             {process.env.NEXT_PUBLIC_GOOGLE_ID && (

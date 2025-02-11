@@ -23,24 +23,33 @@ const HomeNews = async () => {
   if (!articles.length) return <div className="mt-6 md:mt-12" />;
 
   return (
-    <div className="md:container">
-      <Link
-          className="text-lg leading-relaxed hover:text-[rgb(41,91,47)] md:my-6"
-          dangerouslySetInnerHTML={{ __html: articles[0].title }}
-          href='news'
-        />
-      <Carousel className="mb-4 md:mt-4 md:mb-8 no-scroll">
+    <div className="md:container bg-green">
+        <div className='bg-black text-white'>
+
+        <Carousel className="mb-4 md:mt-4 md:mb-8 no-scroll">
         <CarouselContent className="ml-0">
           {articles.map(article => (
             <HomeNewsItem key={article._id} {...article} />
           ))}
         </CarouselContent>
       </Carousel>
+      <Link
+          className="text-lg leading-relaxed hover:text-[rgb(41,91,47)] md:my-6"
+          dangerouslySetInnerHTML={{ __html: articles[0].title }}
+          href='news'
+        />
+      <Link
+          className="text-lg leading-relaxed hover:text-[rgb(41,91,47)] md:my-6"
+          dangerouslySetInnerHTML={{ __html: articles[0].content }}
+          href='news'
+        />
+        </div>
+
     </div>
   );
 };
 
-const HomeNewsItem = ({ _id, image, summary, attachments }: IArticle) => {
+const HomeNewsItem = ({ _id, image, summary, attachments, content }: IArticle) => {
   return (
     <CarouselItem className="flex-basis-[1] pl-0" key={_id}>
        <Link

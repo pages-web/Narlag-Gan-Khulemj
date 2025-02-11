@@ -31,6 +31,13 @@ const nextConfig = {
     NEXT_PUBLIC_CP_ID: "bxmPdQNjTn0H9hCngfVp1",
   },
 
+  // env: {
+  //   NEXT_PUBLIC_MAIN_API_DOMAIN: "https://yoshinoya.app.erxes.io/gateway",
+  //   NEXT_PUBLIC_WS_DOMAIN: "wss://yoshinoya.app.erxes.io/gateway/graphql",
+  //   NEXT_PUBLIC_POS_TOKEN: "Uw37NwESiQW4TXlDqzcnzW7b86LCG4WQ",
+  //   NEXT_PUBLIC_CP_ID: "Bhult_Q0FJkyGQ13cLRLt",
+  //   // NEXT_PUBLIC_NEXT_APP_TOKEN: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHAiOnsibmFtZSI6ImVjb20iLCJjcmVhdGVkQXQiOiIyMDI1LTAxLTE1VDExOjMzOjU1Ljg5OVoiLCJ1c2VyR3JvdXBJZCI6ImcyQ3ZvWWtTNndSd2NvUXpLYUJpMiIsImV4cGlyZURhdGUiOiIyMDI1LTAyLTE1VDE1OjM1OjA2LjU4MVoiLCJub0V4cGlyZSI6dHJ1ZSwiYWxsb3dBbGxQZXJtaXNzaW9uIjpmYWxzZSwiX2lkIjoiWVVDWjRDdWRwcmpSYXRXNmNlSDV4IiwiX192IjowfSwiaWF0IjoxNzM3MDQxNzE0fQ._R3VdRBToVARb_RQIpEr217D8uxjdSZeKWIvJZCYimg",
+  // },
 };
 
 module.exports = nextConfig;
