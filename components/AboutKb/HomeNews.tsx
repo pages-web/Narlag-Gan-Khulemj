@@ -11,7 +11,7 @@ import { IArticle } from '@/types/kb.types';
 import Link from 'next/link';
 import Image from '@/components/ui/image';
 
-const HomeNews = async () => {
+const HomeProject = async () => {
   let articles: IArticle[] = [];
   try {
     const response = await getKbArticlesByCode('news-kb');
@@ -23,38 +23,29 @@ const HomeNews = async () => {
   if (!articles.length) return <div className="mt-6 md:mt-12" />;
 
   return (
-    <div className="md:container bg-green">
-        <div className='bg-black text-white'>
-
-        <Carousel className="mb-4 md:mt-4 md:mb-8 no-scroll">
-        <CarouselContent className="ml-0">
-          {articles.map(article => (
-            <HomeNewsItem key={article._id} {...article} />
-          ))}
-        </CarouselContent>
-      </Carousel>
+    <div className="md:container">
       <Link
           className="text-lg leading-relaxed hover:text-[rgb(41,91,47)] md:my-6"
           dangerouslySetInnerHTML={{ __html: articles[0].title }}
           href='news'
         />
-      <Link
-          className="text-lg leading-relaxed hover:text-[rgb(41,91,47)] md:my-6"
-          dangerouslySetInnerHTML={{ __html: articles[0].content }}
-          href='news'
-        />
-        </div>
-
+      <Carousel className="mb-4 md:mt-4 md:mb-8 no-scroll">
+        <CarouselContent className="ml-0">
+          {articles.map(article => (
+            <HomeProjectItem key={article._id} {...article} />
+          ))}
+        </CarouselContent>
+      </Carousel>
     </div>
   );
 };
 
-const HomeNewsItem = ({ _id, image, summary, attachments, content }: IArticle) => {
+const HomeProjectItem = ({ _id, image, summary, attachments }: IArticle) => {
   return (
     <CarouselItem className="flex-basis-[1] pl-0" key={_id}>
        <Link
         className="relative aspect-[4/5] md:aspect-[13/5] overflow-hidden block"
-        href='news'
+        href='project'
       >
       <div
         className="relative aspect-[4/5] md:aspect-[13/5] overflow-hidden block"
@@ -81,5 +72,5 @@ const HomeNewsItem = ({ _id, image, summary, attachments, content }: IArticle) =
   );
 };
 
-export default HomeNews;
+export default HomeProject;
 
